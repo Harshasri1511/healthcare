@@ -1,60 +1,38 @@
-import { Card,CardContent } from "@/components/ui/cards";
-import { BarChart, LineChart, HeartPulse } from "lucide-react";
+"use client";
+import Layout from '../components/Layout';
+// Remove the local BarChart import since we're using Recharts directly
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
-export default function Dashboard() {
+export default function Home() {
+  // Restructured data for Recharts
+  const data = [
+    { name: 'January', patients: 65 },
+    { name: 'February', patients: 59 },
+    { name: 'March', patients: 80 },
+    { name: 'April', patients: 81 },
+    { name: 'May', patients: 56 },
+  ];
+
   return (
-    <div className="min-h-screen bg-gray-100">
-      {/* Header */}
-      <header className="bg-white shadow-md">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-gray-800">Healthcare Dashboard</h1>
-          <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
-            Logout
-          </button>
-        </div>
-      </header>
-
-      {/* Main Content */}
-      <main className="container mx-auto px-4 py-6">
-        {/* Overview Section */}
-        <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <Card>
-            <CardContent className="flex items-center space-x-4">
-              <HeartPulse className="text-red-500 w-8 h-8" />
-              <div>
-                <p className="text-sm font-medium text-gray-500">Heart Rate</p>
-                <p className="text-xl font-bold text-gray-800">75 bpm</p>
-              </div>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardContent className="flex items-center space-x-4">
-              <BarChart className="text-blue-500 w-8 h-8" />
-              <div>
-                <p className="text-sm font-medium text-gray-500">Blood Pressure</p>
-                <p className="text-xl font-bold text-gray-800">120/80</p>
-              </div>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardContent className="flex items-center space-x-4">
-              <LineChart className="text-green-500 w-8 h-8" />
-              <div>
-                <p className="text-sm font-medium                text-gray-800">190 mg/dL</p>
-              </div>
-            </CardContent>
-          </Card>
-        </section>
-
-        {/* Health Trends Section */}
-        <section className="mt-8">
-          <h2 className="text-xl font-bold text-gray-800 mb-4">Health Trends</h2>
-          <div className="bg-white shadow-md rounded-lg p-6">
-            <p className="text-gray-500">Here, you can display graphs or charts using a library like <strong>Chart.js</strong>, <strong>Recharts</strong>, or <strong>Victory</strong>.</p>
-          </div>
-        </section>
-      </main>
-    </div>
+    <Layout>
+      <h1>Dashboard</h1>
+      <div className="w-full h-[400px]">
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="name" />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <Bar 
+              dataKey="patients" 
+              fill="rgba(75, 192, 192, 0.2)" 
+              stroke="rgba(75, 192, 192, 1)" 
+              strokeWidth={1}
+            />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+    </Layout>
   );
 }
-
