@@ -53,33 +53,6 @@ export default function Dashboard() {
             <p className="text-gray-500">Here, you can display graphs or charts using a library like <strong>Chart.js</strong>, <strong>Recharts</strong>, or <strong>Victory</strong>.</p>
           </div>
         </section>
-
-        {/* Upcoming Appointments Section */}
-        <section className="mt-8">
-          <h2 className="text-xl font-bold text-gray-800 mb-4">Upcoming Appointments</h2>
-          <div className="bg-white shadow-md rounded-lg p-6">
-            <ul className="space-y-4">
-              <li className="flex justify-between items-center border-b pb-4">
-                <div>
-                  <p className="text-gray-800 font-medium">Dr. Robert</p>
-                  <p className="text-sm text-gray-500">Feb 1, 2025 - 10:30 AM</p>
-                </div>
-                <button className="px-3 py-1 text-sm text-white bg-blue-600 rounded-lg hover:bg-blue-700">
-                  View Details
-                </button>
-              </li>
-              <li className="flex justify-between items-center">
-                <div>
-                  <p className="text-gray-800 font-medium">Dr. Emily</p>
-                  <p className="text-sm text-gray-500">Feb 5, 2025 - 3:00 PM</p>
-                </div>
-                <button className="px-3 py-1 text-sm text-white bg-blue-600 rounded-lg hover:bg-blue-700">
-                  View Details
-                </button>
-              </li>
-            </ul>
-          </div>
-        </section>
       </main>
     </div>
   );
