@@ -1,5 +1,6 @@
 import { Card,CardContent } from "@/components/ui/cards";
 import { BarChart, LineChart, HeartPulse } from "lucide-react";
+import Image from "next/image";
 
 export default function Dashboard() {
 
@@ -10,7 +11,11 @@ export default function Dashboard() {
       {/* Header */}
       <header className="bg-white shadow-md">
         <div className="container mx-auto px-4    py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-gray-800">Healthcare Dashboard</h1>
+        <div className="flex flex-row items-center gap-3">
+          <Image src="/logo.png" width={50} height={10} alt="logo image" />
+          <h1 className="text-2xl font-bold text-gray-800">Wellness 360</h1>
+        </div>
+
 
           {logged ?  
           <div className="flex flex-row gap-4">
