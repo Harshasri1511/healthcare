@@ -76,7 +76,9 @@ export default function Dashboard() {
             <p className="text-gray-500">Here, you can display graphs or charts using a library like <strong>Chart.js</strong>, <strong>Recharts</strong>, or <strong>Victory</strong>.</p>
           </div>
         </section>
-
+        
+        <h1 className="font-bold text-black text-xl mt-4">Gain insights into your health</h1>
+        
         {/* Analysis Section */}
         <section className="flex flex-col md:flex-row justify-between flex-wrap mt-4 gap-5">
           <AnalysisCard logo="/blood.jpg" report="Blood Report" />
