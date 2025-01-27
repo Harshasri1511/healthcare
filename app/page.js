@@ -1,3 +1,4 @@
+import  AnalysisCard  from "@/components/AnalysisCard";
 import { Card,CardContent } from "@/components/ui/cards";
 import { BarChart, LineChart, HeartPulse } from "lucide-react";
 import Image from "next/image";
@@ -62,7 +63,7 @@ export default function Dashboard() {
             <CardContent className="flex items-center space-x-4">
               <LineChart className="text-green-500 w-8 h-8" />
               <div>
-                <p className="text-sm font-medium                text-gray-800">190 mg/dL</p>
+                <p className="text-sm font-medium text-gray-800">190 mg/dL</p>
               </div>
             </CardContent>
           </Card>
@@ -75,6 +76,18 @@ export default function Dashboard() {
             <p className="text-gray-500">Here, you can display graphs or charts using a library like <strong>Chart.js</strong>, <strong>Recharts</strong>, or <strong>Victory</strong>.</p>
           </div>
         </section>
+
+        {/* Analysis Section */}
+        <section className="flex flex-col md:flex-row justify-between flex-wrap mt-4 gap-5">
+          <AnalysisCard logo="/blood.jpg" report="Blood Report" />
+          <AnalysisCard logo="/blood.jpg" report="Blood Pressure Report" />
+          <AnalysisCard logo="/blood.jpg" report="Blood Sugar Report" />
+          <AnalysisCard logo="/blood.jpg" report="BMI" />
+          <AnalysisCard logo="/blood.jpg" report="Temperature" />
+        </section>
+
+        
+
       </main>
     </div>
   );
