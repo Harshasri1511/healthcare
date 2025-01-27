@@ -1,55 +1,29 @@
-'use client'; // Mark this as a Client Component
-import { Chart, Bar, LinearScale, CategoryScale, PointElement, LineElement, Tooltip, Legend } from 'chart.js';
-Chart.register(LinearScale, CategoryScale, PointElement, LineElement, Tooltip, Legend);
+import React from 'react';
+import Link from 'next/link';
 
-import { Drawer, List, ListItem, ListItemIcon, ListItemText, Toolbar } from '@mui/material';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
-import { useRouter } from 'next/navigation'; // Use next/navigation for App Router
-
-const Sidebar = () => {
-  const router = useRouter();
-
-  const menuItems = [
-    { text: 'Dashboard', path: '/' },
-    { text: 'Patients', path: '/patients' },
-    { text: 'Appointments', path: '/appointments' },
-    { text: 'Reports', path: '/reports' },
-  ];
-
-  return (
-    <Drawer
-      variant="permanent"
-      sx={{
-        width: 240,
-        flexShrink: 0,
-        '& .MuiDrawer-paper': {
-          width: 240,
-          boxSizing: 'border-box',
-        },
-      }}
-    >
-      <Toolbar />
-      <List>
-        {menuItems.map((item, index) => (
-          <ListItem
-            key={item.text}
-            button= "true"
-            component="div"
-            onClick={() => router.push(item.path)}
-            sx={{
-              cursor: 'pointer', // Add a pointer cursor for better UX
-            }}
-          >
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={item.text} />
-          </ListItem>
-        ))}
-      </List>
-    </Drawer>
-  );
-};
+const Sidebar = () => (
+  <aside className="w-64 bg-gray-900 text-white min-h-screen p-4">
+    <h2 className="text-xl font-bold mb-4">H-Health</h2>
+    <nav>
+      <ul>
+        <li className="mb-2">
+          <Link href="/app/overview" className="hover:text-gray-300">
+            Overview
+          </Link>
+        </li>
+        <li className="mb-2">
+          <Link href="/app/appointments" className="hover:text-gray-300">
+            Appointments
+          </Link>
+        </li>
+        <li className="mb-2">
+          <Link href="/app/patients" className="hover:text-gray-300">
+            Patients
+          </Link>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+);
 
 export default Sidebar;

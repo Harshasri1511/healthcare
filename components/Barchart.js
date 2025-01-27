@@ -1,10 +1,19 @@
-'use client'; // Mark this as a Client Component
-import { Chart, LinearScale, CategoryScale, PointElement, LineElement, Tooltip, Legend } from 'chart.js';
-import { Bar } from 'react-chartjs-2';
- 
+import React from 'react';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
-const BarChart = ({ data, options }) => {
-  return <Bar data={data} options={options} />;
-};
+const CustomBarChart = ({ data, dataKey, title }) => (
+  <div className="h-[300px]">
+    <h2 className="text-lg font-bold mb-2">{title}</h2>
+    <ResponsiveContainer width="100%" height="100%">
+      <BarChart data={data}>
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="name" />
+        <YAxis />
+        <Tooltip />
+        <Bar dataKey={dataKey} fill="rgba(99, 102, 241, 0.8)" radius={[4, 4, 0, 0]} />
+      </BarChart>
+    </ResponsiveContainer>
+  </div>
+);
 
-export default BarChart;
+export default CustomBarChart;

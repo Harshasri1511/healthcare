@@ -1,21 +1,15 @@
-'use client'; // Mark this as a Client Component
-import { Chart, LinearScale, CategoryScale, PointElement, LineElement, Tooltip, Legend } from 'chart.js';
-import { Box, CssBaseline, Toolbar } from '@mui/material';
+import React from 'react';
 import Sidebar from './Sidebar';
 import Navbar from './Navbar';
 
-const Layout = ({ children }) => {
-  return (
-    <Box sx={{ display: 'flex' }}>
-      <CssBaseline />
+const Layout = ({ children }) => (
+  <div className="flex">
+    <Sidebar />
+    <div className="flex-1">
       <Navbar />
-      <Sidebar />
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-        <Toolbar /> {/* Adds spacing for the Navbar */}
-        {children}
-      </Box>
-    </Box>
-  );
-};
+      <main className="p-6">{children}</main>
+    </div>
+  </div>
+);
 
 export default Layout;
