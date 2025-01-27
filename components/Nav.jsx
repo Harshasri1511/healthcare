@@ -1,5 +1,7 @@
-import Image from "next/image";
+"use client";
 
+import Image from "next/image";
+import { useRouter } from "next/router";
 
 export default function Nav(){
 
@@ -19,7 +21,7 @@ export default function Nav(){
             {logged ?  
             <div className="flex flex-row gap-4">
                 <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
-                + Report
+                <a>+ Report</a>
                 </button>
                 <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
                 Logout
