@@ -55,10 +55,10 @@ export default function Dashboard() {
         {/* Analysis Section */}
         <section className="flex flex-col md:flex-row justify-between flex-wrap mt-4 gap-5">
           <AnalysisCard logo="/blood.jpg" report="Blood Report" rou = "bloodpressure"/>
-          <AnalysisCard logo="/blood.jpg" report="Genetic Report" rou = "geneticreport"/>
-          <AnalysisCard logo="/blood.jpg" report="Blood Sugar Report" rou = "bloodsugar"/>
-          <AnalysisCard logo="/blood.jpg" report="Hormonals Profile" rou = "hormonals"/>
-          <AnalysisCard logo="/blood.jpg" report="BMI" rou = "bmi"/>
+          <AnalysisCard logo="/genetic.jpg" report="Genetic Report" rou = "geneticreport"/>
+          <AnalysisCard logo="/bloodsugar.jpg" report="Blood Sugar Report" rou = "bloodsugar"/>
+          <AnalysisCard logo="/hormonal.jpg" report="Hormonals Profile" rou = "hormonals"/>
+          <AnalysisCard logo="/bmi.jpg" report="BMI" rou = "bmi"/>
         </section>
 
         
