@@ -50,14 +50,15 @@ export default function Dashboard() {
           </div>
         </section>
         
-        <h1 className="font-bold text-black text-xl mt-4">Gain insights into your health</h1>
+        <h1 className="text-xl font-bold text-gray-800 mt-4">Gain insights into your health</h1>
         
         {/* Analysis Section */}
         <section className="flex flex-col md:flex-row justify-between flex-wrap mt-4 gap-5">
-          <AnalysisCard logo="/blood.jpg" report="Blood Report" />
-          <AnalysisCard logo="/blood.jpg" report="Blood Pressure Report" />
-          <AnalysisCard logo="/blood.jpg" report="Blood Sugar Report" />
-          <AnalysisCard logo="/blood.jpg" report="BMI" />
+          <AnalysisCard logo="/blood.jpg" report="Blood Report" rou = "bloodpressure"/>
+          <AnalysisCard logo="/blood.jpg" report="Genetic Report" rou = "geneticreport"/>
+          <AnalysisCard logo="/blood.jpg" report="Blood Sugar Report" rou = "bloodsugar"/>
+          <AnalysisCard logo="/blood.jpg" report="Hormonals Profile" rou = "hormonals"/>
+          <AnalysisCard logo="/blood.jpg" report="BMI" rou = "bmi"/>
         </section>
 
         
