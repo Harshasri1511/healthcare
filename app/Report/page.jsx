@@ -41,9 +41,8 @@ export default function Report(){
                     </form>
                 </div>
                 <div className="xs:hidden lg:inline-block">
-                   <div className="p-10 bg-white">
-                   <link type="image/png" sizes="32x32" rel="icon" href=".../icons8-user profile-ios7-32.png"></link>
-                   <a target="_blank" href="https://icons8.com/icon/7820/male-user">User Profile</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+                   <div className="p-10 bg-white rounded-lg">
+
                     </div> 
                 </div>
 
