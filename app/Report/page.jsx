@@ -11,7 +11,7 @@ export default function Report(){
     }
 
     return(
-            <div className="p-10 min-h-screen bg-gray-100 xs:flex xs:justify-center lg:flex-row lg:justify-between">
+            <div className="p-10 xs:p-1 min-h-screen bg-gray-100 xs:flex xs:justify-center lg:flex-row lg:justify-between">
                 <div className="inline-block">
                     <form onSubmit={(e)=>{
                     e.preventDefault();
@@ -42,7 +42,7 @@ export default function Report(){
                 </div>
                 <div className="xs:hidden lg:inline-block">
                    <div className="p-10 bg-white rounded-lg">
-
+                        
                     </div> 
                 </div>
 

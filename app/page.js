@@ -11,7 +11,7 @@ export default function Dashboard() {
       
 
       {/* Main Content */}
-      <main className="container mx-auto px-4 py-6">
+      <main className="flex flex-col mx-auto px-4 py-6">
         {/* Overview Section */}
         <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <Card>
